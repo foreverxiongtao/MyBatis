@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mybatis.test.OrderMapper">
+
+    <select id="orderSelect" parameterType="int" resultType="_Order">
+        SELECT  order_id id, order_no no,order_price price FROM Orders where order_id=#{id}
+    </select>
+    <select id="orderSelect2" parameterType="int" resultMap="myOrder">
+        SELECT  * FROM  Orders where order_id=#{id}
+    </select>
+    <!--建立数据库和java实体类的映射关系-->
+    <resultMap id="myOrder" type="_Order">
+        <id column="order_id" property="id"></id>
+        <result column="order_no" property="no"></result>
+        <result column="order_price" property="price"></result>
+    </resultMap>
+
+</mapper>

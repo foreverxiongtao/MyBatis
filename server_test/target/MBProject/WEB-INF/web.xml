@@ -1,0 +1,83 @@
+<!DOCTYPE web-app PUBLIC
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+    <display-name>Archetype Created Web Application</display-name>
+    <servlet>
+        <servlet-name>TestHttpServlert</servlet-name>
+        <servlet-class>TestHttpServlert</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>TestUserListServlert</servlet-name>
+        <servlet-class>TestUserListServlert</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>TestUserInsertServlert</servlet-name>
+        <servlet-class>TestUserInsertServlert</servlet-class>
+    </servlet>
+
+
+    <servlet>
+        <servlet-name>TestUserUpdateServlert</servlet-name>
+        <servlet-class>TestUserUpdateServlert</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>TestUserDeleteServlert</servlet-name>
+        <servlet-class>TestUserDeleteServlert</servlet-class>
+    </servlet>
+
+
+    <servlet>
+        <servlet-name>TestOrderSelectServlet</servlet-name>
+        <servlet-class>TestOrderSelectServlet</servlet-class>
+    </servlet>
+
+
+    <servlet>
+        <servlet-name>TestClassesServlet</servlet-name>
+        <servlet-class>TestClassesServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>TestClassesServlet</servlet-name>
+        <url-pattern>/classes/list</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet-mapping>
+        <servlet-name>TestUserInsertServlert</servlet-name>
+        <url-pattern>/user/insert</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet-mapping>
+        <servlet-name>TestUserDeleteServlert</servlet-name>
+        <url-pattern>/user/delete</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet-mapping>
+        <servlet-name>TestUserUpdateServlert</servlet-name>
+        <url-pattern>/user/update</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet-mapping>
+        <servlet-name>TestOrderSelectServlet</servlet-name>
+        <url-pattern>/order/list</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet-mapping>
+        <servlet-name>TestUserListServlert</servlet-name>
+        <url-pattern>/user/list</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>TestHttpServlert</servlet-name>
+        <url-pattern>/TestHttpServlert</url-pattern>
+    </servlet-mapping>
+</web-app>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mybatis.test.CourseMapper">
+
+    <select id="selectCourse2" parameterType="int" resultMap="carouseMap2">
+        SELECT  * FROM  Cls c, Teacher t where c.teacher_id=t.t_id and c.teacher_id=#{id}
+    </select>
+
+    <resultMap id="carouseMap2" type="_Course">
+        <id column="c_id" property="id"/>
+        <result column="c_name" property="name"/>
+        <association property="teacher" column="teacher_id" javaType="_Teacher">
+            <id column="t_id" property="id"/>
+            <result column="t_name" property="name"/>
+        </association>
+    </resultMap>
+
+    <select id="selectCourse" parameterType="int" resultMap="carouseMap1">
+        select c_id ,c_name,teacher_id from Cls where c_id= #{id}
+    </select>
+    <resultMap id="carouseMap1" type="_Course">
+        <id column="c_id" property="id"/>
+        <result column="c_name" property="name"/>
+        <association property="teacher" column="teacher_id" select="selectTeacher"/>
+    </resultMap>
+    <select id="selectTeacher" parameterType="int" resultType="_Teacher">
+        select t_id id,t_name name from Teacher where t_id= #{id}
+    </select>
+</mapper>
