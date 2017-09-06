@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mybatis.test.MultiClassesMapper">
+    <select id="queryClasses" parameterType="int" resultMap="classesResult">
+        select * from students s, corouse  c where s.c_id=c.c_id and c.c_id=#{id};
+    </select>
+
+    <resultMap id="classesResult" type="_Corouse">
+        <id property="corouseName" column="c_name"/>
+        <id property="id" column="c_id"/>
+        <collection property="students" ofType="_Student">
+            <id column="s_id" property="id"/>
+            <result column="s_name" property="name"/>
+            <result column="s_age" property="age"/>
+        </collection>
+    </resultMap>
+</mapper>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mybatis.test.UserQueryMapper">
+    <select id="queryUser" parameterType="_UserQueryEntity" resultType="_User">
+        select id id, s_name name, s_age age from Users  where s_name like #{name} and s_age between #{minAge} and #{maxAge} ;
+    </select>
+</mapper>

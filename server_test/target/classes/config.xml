@@ -11,6 +11,10 @@
         <typeAlias type="bean.Order" alias="_Order"></typeAlias>
         <typeAlias type="bean.Teacher" alias="_Teacher"></typeAlias>
         <typeAlias type="bean.Course" alias="_Course"></typeAlias>
+        <typeAlias type="bean.UserDataEntity" alias="_UserDataEntity"></typeAlias>
+        <typeAlias type="bean.UserQueryEntity" alias="_UserQueryEntity"></typeAlias>
+        <typeAlias type="bean.Corouse" alias="_Corouse"></typeAlias>
+        <typeAlias type="bean.Student" alias="_Student"></typeAlias>
     </typeAliases>
     <environments default="development">
         <environment id="development">
@@ -28,5 +32,8 @@
         <mapper resource="OrderMapper.xml"/>
         <mapper class="UserDaoAPI"/>
         <mapper resource="CourseMapper.xml"/>
+        <mapper resource="AndroidMapper.xml"/>
+        <mapper resource="UserQueryMapper.xml"/>
+        <mapper resource="MultiClassesMapper.xml"/>
     </mappers>
 </configuration>

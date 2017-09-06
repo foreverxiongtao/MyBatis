@@ -41,6 +41,40 @@
         <servlet-class>TestClassesServlet</servlet-class>
     </servlet>
 
+
+    <servlet>
+        <servlet-name>TestQueryUserServlert</servlet-name>
+        <servlet-class>TestQueryUserServlert</servlet-class>
+    </servlet>
+
+
+    <servlet>
+        <servlet-name>TestAndroidListServlert</servlet-name>
+        <servlet-class>TestAndroidListServlert</servlet-class>
+    </servlet>
+
+
+    <servlet>
+        <servlet-name>TestMultClassesServlert</servlet-name>
+        <servlet-class>TestMultClassesServlert</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>TestMultClassesServlert</servlet-name>
+        <url-pattern>/android/classes/list</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>TestAndroidListServlert</servlet-name>
+        <url-pattern>/android/user/list</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet-mapping>
+        <servlet-name>TestQueryUserServlert</servlet-name>
+        <url-pattern>/user/query</url-pattern>
+    </servlet-mapping>
+
     <servlet-mapping>
         <servlet-name>TestClassesServlet</servlet-name>
         <url-pattern>/classes/list</url-pattern>
