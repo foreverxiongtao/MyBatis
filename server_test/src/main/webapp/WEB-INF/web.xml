@@ -4,6 +4,24 @@
 
 <web-app>
     <display-name>Archetype Created Web Application</display-name>
+
+
+    <!--配置spring-mvc-->
+    <servlet>
+        <servlet-name>appServlet</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath:/springmvc-context.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>appServlet</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+
     <servlet>
         <servlet-name>TestHttpServlert</servlet-name>
         <servlet-class>TestHttpServlert</servlet-class>
@@ -41,10 +59,15 @@
         <servlet-class>TestClassesServlet</servlet-class>
     </servlet>
 
-
     <servlet>
         <servlet-name>TestQueryUserServlert</servlet-name>
         <servlet-class>TestQueryUserServlert</servlet-class>
+    </servlet>
+
+
+    <servlet>
+        <servlet-name>MySpringTestServlet</servlet-name>
+        <servlet-class>MySpringTestServlet</servlet-class>
     </servlet>
 
 
@@ -113,5 +136,11 @@
     <servlet-mapping>
         <servlet-name>TestHttpServlert</servlet-name>
         <url-pattern>/TestHttpServlert</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet-mapping>
+        <servlet-name>MySpringTestServlet</servlet-name>
+        <url-pattern>/MySpringTestServlet</url-pattern>
     </servlet-mapping>
 </web-app>

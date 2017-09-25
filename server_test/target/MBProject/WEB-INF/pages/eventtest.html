@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://sdk.talkingdata.com/app/h5/v1?appid=B8A54B5D049041098A5C89B9BE26F7BF&vn=TestA&vc=1.0.0"></script>
+    <script type="text/javascript">
+        function testClick() {
+            TDAPP.onEvent("testad");
+        }
+    </script>
+</head>
+<body>
+<button style="width: 1500px;height: 1200px" value="测试" onclick="testClick()">测试</button>
+</body>
+</html>

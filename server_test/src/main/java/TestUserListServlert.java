@@ -1,4 +1,6 @@
+import bean.AndroidUser;
 import bean.User;
+import bean.UserDataEntity;
 import com.alibaba.fastjson.JSON;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -27,8 +29,8 @@ public class TestUserListServlert extends HttpServlet {
 //        PrintWriter out = resp.getWriter();
 //        out.println("<h3>" + "jay" + "</h3>");
 
-//        queryUser(resp);
-        queryUserAPI(resp);
+        queryUser(resp);
+//        queryUserAPI(resp);
     }
 
     @Override
@@ -45,14 +47,19 @@ public class TestUserListServlert extends HttpServlet {
             SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
             SqlSession session = sqlSessionFactory.openSession();
             try {
-                List<User> user = session.selectList("com.mybatis.test.UserMapper.selectUserList");
-
+                AndroidUser androidUser = new AndroidUser();
+                androidUser.setCode(0);
+                androidUser.setMeg("查询成功");
+                List<UserDataEntity> user = session.selectList("com.mybatis.test.UserMapper.selectUserList");
+                androidUser.setResult(user);
                 //设置响应内容类型
-                response.setContentType("text/html");
+                response.setContentType("text/plain");
+                response.setCharacterEncoding("utf-8");
                 //设置逻辑实现
                 PrintWriter out = response.getWriter();
-                String userStr = JSON.toJSONString(user);
-                out.println("<h3>" + userStr + "</h3>");
+                String userStr = JSON.toJSONString(androidUser);
+                out.println(userStr);
+//                out.println("<h3>" + userStr + "</h3>");
             } finally {
                 session.close();
             }
@@ -60,10 +67,6 @@ public class TestUserListServlert extends HttpServlet {
             e.printStackTrace();
         }
     }
-
-
-
-
 
 
     private void queryUserAPI(HttpServletResponse response) {
